@@ -1,13 +1,28 @@
 {
   "name": "vue-roll-up",
-  "version": "0.1.0",
-  "private": true,
+  "version": "0.1.1",
+  "private": false,
+  "keywords": [
+    "vue",
+    "vue2",
+    "marquee",
+    "roll",
+    "scroll",
+    "up"
+  ],
+  "license": "MIT",
+  "description": "A vertical marquee component for vue 2.x.",
+  "author": "Vicco Wang <viccowang@hotmail.com> (https://blog.vicco)",
+  "main": "dist/vue-roll-up.common.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
+    "build-lib": "vue-cli-service build --target lib --name vue-roll-up ./src/components/index.js",
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
     "vue": "^2.6.6"
   },
   "devDependencies": {

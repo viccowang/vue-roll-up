@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Vue Roll Up Demo</title>
+  <style>
+    #app { 
+      width: 500px;
+      height: 300px;
+      margin: 100px auto;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      background: #E0F2F1;
+      border: 2px solid #B2DFDB;
+      border-radius: 15px;
+      box-shadow: 0 0 5px rgba(0,0,0,.1), 0 0 35px rgba(0,0,0,.07);
+    }
+    #app h2 {
+      position: relative;
+      top: -30px;
+    }
+    #app .marquee-wrapper {
+      display: inherit;
+      width:90%;
+      height:35px;
+      padding:10px;
+      border-radius:5px;
+      border: 5px solid #00ACC1;
+      background-color: #E0F7FA;
+    }
+
+  </style>
+</head>
+<body>
+  <div id="app">
+    <h2>Vue Roll Up</h2>
+    <div class="marquee-wrapper">
+        <vue-roll-up class="maquree" :roll-list="rollList" use-slot width="90%" >
+            <template v-slot="{ marquee }">
+              {{ marquee }}
+            </template>
+          </vue-roll-up>
+    </div>
+  </div>
+
+  <script src="vue.min.js"></script>
+  <script src="../dist/vue-roll-up.umd.min.js"></script>
+  <script src="demo.js"></script>
+
+</body>
+</html>

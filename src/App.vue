@@ -1,17 +1,26 @@
 <template>
   <div id="app">
     <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <VueRollUp 
+    :rollList="rollList"
+    />
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import VueRollUp from './components/VueRollUp'
 
 export default {
   name: 'app',
+  data () {
+    return {
+      rollList: [
+        'A','B','C'
+      ]
+    }
+  },
   components: {
-    HelloWorld
+    VueRollUp
   }
 }
 </script>
