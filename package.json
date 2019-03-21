@@ -14,6 +14,7 @@
   "description": "A vertical marquee component for vue 2.x.",
   "author": "Vicco Wang <viccowang@hotmail.com> (https://blog.vicco)",
   "main": "dist/vue-roll-up.common.js",
+  "repository": "https://github.com/viccowang/vue-roll-up.git",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
