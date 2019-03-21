@@ -34,7 +34,7 @@ component: {
 接着，在模版文件中定义组件
 ```html
 <vue-roll-up 
-  :listData="list"
+  :rollList="list"
   :width="300"
   :height="65"
   :color="#FF0000"
@@ -48,7 +48,7 @@ component: {
 ### 属性
 | 属性 | 描述 |  类型 | 默认值 |
 | -- | -- | -- | -- |
-| listData | 需要滚动的数据，数组类型 | Array | - |
+| rollList | 需要滚动的数据，数组类型 | Array | - |
 | useSlot | 设置为true的话可以在模板中使用slot特性 | Boolean | false |
 | width | 配置滚动的整体宽度 | Any | 200 |
 | height | 配置滚动的高度和行高 | Any | 35 |
@@ -60,7 +60,7 @@ component: {
 ### 通过slot给marquee绑定点击事件:
 
 ```html
-<vue-roll-up :listData="list" :width="300">
+<vue-roll-up :rollList="list" :width="300">
   <template v-slot="{ marquee }">
     <span @click="doSth">{{ marquee }}</span>
   </template>
