@@ -26,7 +26,7 @@
  * ===============
  * Author: Vicco Wang
  * Date: 2019.03.21
- * 
+ *
  */
 export default {
   name: 'VueRollUp',
@@ -104,12 +104,13 @@ export default {
   watch: {
     rollList: {
       handler (data) {
-        if( data && data.length ) {
+        if (data && data.length) {
           // 为了保证无缝滚动的连续性，需要将最后一个和第一个滚动内部保持一致
           this.marqueeList = [
             ...data,
             data[0]
           ]
+          this.resetRoll()
           // start to roll
           this.startToRoll()
         }
@@ -127,7 +128,8 @@ export default {
       // 滚动速度
       transitionSpeed: 0,
       // 滚动延迟时的setInterval
-      rollTimer: null
+      rollIntervalTimer: null,
+      rollTimeoutTimer: null
     }
   },
   mounted () {
@@ -137,11 +139,19 @@ export default {
       this.transitionSpeed = transitionSpeed
       this.rollDistance = height
     },
+    resetRoll () {
+      this.rollMarqueeIndex = 0
+      this.rollDistance = 0
+      if (this.rollIntervalTimer) {
+        clearInterval(this.rollIntervalTimer)
+        clearTimeout(this.rollTimeoutTimer)
+      }
+    },
     startToRoll () {
-      this.rollTimer = setInterval(() => {
+      this.rollIntervalTimer = setInterval(() => {
         this.rolling(++this.rollMarqueeIndex * -this.height, this.speed)
         if (this.rollMarqueeIndex === this.marqueeListLength - 1) {
-          setTimeout(() => {
+          this.rollTimeoutTimer = setTimeout(() => {
             this.rolling(0, 0)
             this.rollMarqueeIndex = 0
           }, this.speed)
@@ -149,7 +159,7 @@ export default {
       }, this.duration)
     },
     mouseoverHandle () {
-      this.rollTimer && clearInterval(this.rollTimer)
+      this.rollIntervalTimer && clearInterval(this.rollIntervalTimer)
     },
     mouseleaveHandel () {
       this.startToRoll()
@@ -164,7 +174,6 @@ export default {
 .vue-roll-up {
   position: relative;
   overflow: hidden;
-
   ul {
     padding: 0;
     margin: 0;
@@ -175,7 +184,6 @@ export default {
     transition: all .3s ease 0s;
     transform: translateY();
     transition-timing-function: cubic-bezier(0.075, 0.82, 0.165, 1);
-
     li {
       display: inherit;
       list-style: none;
@@ -185,6 +193,5 @@ export default {
       box-sizing: border-box;
     }
   }
-
 }
 </style>
