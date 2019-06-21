@@ -1,6 +1,6 @@
 {
   "name": "vue-roll-up",
-  "version": "0.1.4",
+  "version": "0.1.5",
   "private": false,
   "keywords": [
     "vue",
@@ -21,18 +21,18 @@
     "build-lib": "vue-cli-service build --target lib --name vue-roll-up ./src/components/index.js",
     "lint": "vue-cli-service lint"
   },
-  "dependencies": {
-    "node-sass": "^4.11.0",
-    "sass-loader": "^7.1.0",
+  "peerDependencies": {
     "vue": "^2.6.6"
   },
   "devDependencies": {
     "@vue/cli-plugin-babel": "^3.5.0",
     "@vue/cli-plugin-eslint": "^3.5.0",
-    "@vue/cli-service": "^3.5.0",
+    "@vue/cli-service": "^3.8.4",
     "babel-eslint": "^10.0.1",
     "eslint": "^5.8.0",
     "eslint-plugin-vue": "^5.0.0",
+    "node-sass": "^4.11.0",
+    "sass-loader": "^7.1.0",
     "vue-template-compiler": "^2.5.21"
   },
   "eslintConfig": {
@@ -58,5 +58,8 @@
     "> 1%",
     "last 2 versions",
     "not ie <= 8"
-  ]
+  ],
+  "dependencies": {
+    "vue": "^2.6.10"
+  }
 }
