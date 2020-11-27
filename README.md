@@ -37,7 +37,7 @@ component: {
   :roll-list="list"
   :width="300"
   :height="65"
-  :color="#FF0000"
+  color="#FF0000"
   :duration="35000"
   :speed="500"
 ></vue-roll-up>
