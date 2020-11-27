@@ -60,7 +60,7 @@ component: {
 ### 通过slot给marquee绑定点击事件:
 
 ```html
-<vue-roll-up :roll-list="list" :width="300">
+<vue-roll-up :roll-list="list" :width="300" useSlot>
   <template v-slot="{ marquee }">
     <span @click="doSth">{{ marquee }}</span>
   </template>
